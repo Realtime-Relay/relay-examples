@@ -5,26 +5,37 @@ const client = new Realtime({
   secret: '$secret'
 })
 
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 client.init()
 
 await client.on("chat.room1", (data) => {
     console.log(data);
 })
 
-client.on(Realtime.CONNECTED, async () => {
+client.on(CONNECTED, async () => {
   console.log("Connected to Relay!")
 
-  var sent = await client.publish("chat.room1", {
-      user_name: "John Doe",
-      message: "How's it going fam?"
+  console.log("Enter message: ")
+
+  rl.on('line', async (input) => {
+      if(input == "exit"){
+        await client.close()
+        return
+      }
+
+      var sent = await client.publish("chat.room1", {
+          user_name: "John Doe",
+          message: input
+      });
+    
+      console.log("Message sent => " + sent);  
   });
 
-  console.log("Message sent => " + sent);  
-
-  var unsubscribed = await client.off("chat.room1")
-  console.log("Unsubscribed from chat.room1 => " + unsubscribed)
-
-  await client.close()
+  
 })
 
 client.connect()
