@@ -1,4 +1,4 @@
-import Realtime from "relayx-webjs"
+import { Realtime, CONNECTED } from "relayx-webjs"
 
 const client = new Realtime({
   api_key: '$api_key',

@@ -2,7 +2,7 @@ await client.on("chat.room1", (data) => {
     console.log(data);
 })
 
-client.on(Realtime.CONNECTED, async () => {
+client.on(CONNECTED, async () => {
   console.log("Connected to Relay!")
 
   var sent = await client.publish("chat.room1", {

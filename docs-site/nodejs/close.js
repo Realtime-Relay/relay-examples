@@ -2,7 +2,7 @@ await client.on("chat.room1", (data) => {
     console.log(data);
 })
 
-client.on(Realtime.CONNECTED, async () => {
+client.on(CONNECTED, async () => {
   // ... Code from previous step
 
   var unsubscribed = await client.off("chat.room1")

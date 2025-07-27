@@ -1,4 +1,5 @@
-import Realtime from "relayx-js"
+import { Realtime, CONNECTED } from "relayx-js"
+import * as readline from 'readline';
 
 const client = new Realtime({
   api_key: '$api_key',
@@ -12,7 +13,7 @@ const rl = readline.createInterface({
 
 client.init()
 
-await client.on("chat.room1", (data) => {
+await client.on("$topic", (data) => {
     console.log(data);
 })
 
@@ -27,7 +28,7 @@ client.on(CONNECTED, async () => {
         return
       }
 
-      var sent = await client.publish("chat.room1", {
+      var sent = await client.publish("$topic", {
           user_name: "John Doe",
           message: input
       });
