@@ -31,7 +31,7 @@ async def main():
     await client.on("chat.room1", callback_fn)
     await client.on(Realtime.CONNECTED, on_connected)
 
-    await client.connect()
+    await client.connect() 
 
 # Run the main function
 if __name__ == "__main__":
