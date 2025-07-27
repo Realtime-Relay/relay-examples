@@ -1,8 +1,8 @@
 import Realtime
 
 var client = Realtime(
-    apiKey: "${apiKeys.api_key}",
-    secret: "${apiKeys.secret}"
+    apiKey: "$api_key",
+    secret: "$secret"
 )
 
 client?.prepare(staging: false, opts: ["debug": false])
