@@ -1,5 +1,4 @@
 import asyncio
-import os
 from relayx_py import Realtime
 
 client = Realtime({
@@ -15,17 +14,29 @@ def callback_fn(data):
 async def on_connected():
     print("Connected to Relay!")
 
-    sent = await client.publish("$topic", {
-        "user_name": "John Doe",
-        "message": "How's it going fam?"
-    })
+    text = ""
 
-    print(f"Message sent => {sent}")
+    loop = asyncio.get_event_loop()
 
-    unsubscribed = await client.off("$topic")
-    print(f"Unsubscribed from $topic => {unsubscribed}")
+    while text != "exit":
+        text = await loop.run_in_executor(None, input, "Enter Message: ")
 
-    await client.close()
+        if text == "exit":
+            unsubscribed = await client.off("$topic")
+            print(f"Unsubscribed from $topic => {unsubscribed}")
+
+            await client.close()
+
+            return
+
+        sent = await client.publish("$topic", {
+            "user_name": "John Doe",
+            "message": "How's it going fam?"
+        })
+
+        print(f"Message sent => {sent}")
+
+    
 
 async def main():
     await client.on("$topic", callback_fn)
