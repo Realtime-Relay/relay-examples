@@ -1,7 +1,7 @@
 import com.realtime.relay.realtimeSDK.Realtime
 
 val client = Realtime(this, 
-                      "${apiKeys.api_key}",
-                      "${apiKeys.secret}")
+                      "$api_key",
+                      "$secret")
                       
 client.init(staging = false, opts = mapOf("debug" to false))
