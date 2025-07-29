@@ -6,3 +6,10 @@ const client = new Realtime({
 })
 
 client.init()
+
+// ... Application Code
+client.close()
+
+// ... Other Application Code
+
+client.connect()
