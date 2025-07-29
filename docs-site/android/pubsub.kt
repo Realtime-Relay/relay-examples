@@ -2,7 +2,7 @@ client.on("chat.room1") { payload ->
   Log.d("Message", payload)
 }
 
-client.on("CONNECTED") {
+client.on(Realtime.CONNECTED) {
   Log.d("SDKEvent", "Connected to Relay!")
 
   val message = buildMap<String, Any> {
