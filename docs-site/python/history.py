@@ -16,13 +16,13 @@ history = await client.history("chat.room1", start, end)
 history = await client.history("chat.room1", start)
 
 # --------------------------------------------------------
-# $history will look like
+# $history is a dict array
 [
     {
-        id: "<MESSAGE ID>",
-        topic: "<TOPIC MATCHING TOPIC / WILDCARD TOPIC>",
-        message: <Actual message as string, number or dict>,
-        timestamp: "<Timestamp at which message was sent>"
+        "id": "<MESSAGE ID>",
+        "topic": "<TOPIC MATCHING TOPIC / WILDCARD TOPIC>",
+        "message": <Actual message as string, number or dict>,
+        "timestamp": "<Timestamp at which message was sent>"
     }, 
     ...
 ]

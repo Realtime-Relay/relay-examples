@@ -16,7 +16,7 @@ var history = await client.history("chat.room1", startDate, endDate)
 var history = await client.history("chat.room1", startDate)
 
 //--------------------------------------------------------
-// $history will look like
+// $history is a json array
 [
     {
         id: "<MESSAGE ID>",
