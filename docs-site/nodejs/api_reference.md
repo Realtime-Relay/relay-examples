@@ -24,11 +24,10 @@ Initializes the Realtime client.
 - `staging` (`boolean`, optional): Use staging environment. Default: `false`
 - `opts` (`Object`, optional): Additional options
   - `debug` (`boolean`): Enable debug logging
-  - `max_retries` (`number`): Maximum retry attempts
 
 #### `async connect()`
 
-Establishes connection to the Relay network.
+Establishes connection to the Relay Network.
 
 **Returns:** `Promise<void>`
 
