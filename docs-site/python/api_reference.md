@@ -158,9 +158,9 @@ Validates if a message can be published.
 Subscribe to these events using the `on()` method:
 
 - `CONNECTED`: Connection established
-- `DISCONNECTED`: Connection lost
+- `DISCONNECTED`: Connection closed
 - `RECONNECT`: Reconnection status changes
-  - Callback receives: `"RECONNECTING"` or `"RECONNECTED"`
+  - Callback receives: `"RECONNECTING"`, `"RECONN_FAIL"` or `"RECONNECTED"`
 - `MESSAGE_RESEND`: Offline messages resent
   - Callback receives: List of message statuses
 
