@@ -1,32 +1,8 @@
-# Relay Realtime Node.js SDK
+# Node.js SDK API Reference
 
-The Relay Realtime Node.js SDK provides real-time messaging capabilities using NATS.
+## Constructor
 
-## Installation
-
-```bash
-npm install @relay/realtime-nodejs
-```
-
-## Usage
-
-```javascript
-import { Realtime } from '@relay/realtime-nodejs';
-
-const client = new Realtime({
-  api_key: 'YOUR_API_KEY',
-  secret: 'YOUR_SECRET_KEY'
-});
-
-await client.init();
-await client.connect();
-```
-
-## API Reference
-
-### Constructor
-
-#### `new Realtime(config)`
+### `new Realtime(config)`
 
 Creates a new Realtime client instance.
 
@@ -38,9 +14,9 @@ Creates a new Realtime client instance.
 **Throws:**
 - `Error` if config is invalid or missing required fields
 
-### Methods
+## Methods
 
-#### `async init(staging?, opts?)`
+### `async init(staging?, opts?)`
 
 Initializes the Realtime client.
 
@@ -56,13 +32,13 @@ Establishes connection to the Relay network.
 
 **Returns:** `Promise<void>`
 
-#### `async close()`
+### `async close()`
 
 Closes the connection to Relay.
 
 **Returns:** `Promise<void>`
 
-#### `async on(topic: string, callback: Function)`
+### `async on(topic: string, callback: Function)`
 
 Subscribes to messages on a topic.
 
@@ -79,7 +55,7 @@ Subscribes to messages on a topic.
 
 **Returns:** `Promise<boolean>` - Subscription success status
 
-#### `async off(topic: string)`
+### `async off(topic: string)`
 
 Unsubscribes from a topic.
 
@@ -88,7 +64,7 @@ Unsubscribes from a topic.
 
 **Returns:** `Promise<boolean>` - Unsubscribe success status
 
-#### `async publish(topic: string, data: any)`
+### `async publish(topic: string, data: any)`
 
 Publishes a message to a topic.
 
@@ -98,7 +74,7 @@ Publishes a message to a topic.
 
 **Returns:** `Promise<boolean>` - Publish success status
 
-#### `async history(topic: string, start: Date, end?: Date)`
+### `async history(topic: string, start: Date, end?: Date)`
 
 Retrieves message history for a topic.
 
@@ -117,9 +93,9 @@ Retrieves message history for a topic.
 }
 ```
 
-### Utility Methods
+## Utility Methods
 
-#### `isTopicValid(topic: string)`
+### `isTopicValid(topic: string)`
 
 Validates if a topic name is valid.
 
@@ -128,7 +104,7 @@ Validates if a topic name is valid.
 
 **Returns:** `boolean`
 
-#### `isMessageValid(message: any)` 
+### `isMessageValid(message: any)` 
 
 Validates if a message can be published.
 
@@ -137,7 +113,7 @@ Validates if a message can be published.
 
 **Returns:** `boolean`
 
-### Events
+## Events
 
 Subscribe to these events using the `on()` method:
 
@@ -148,7 +124,7 @@ Subscribe to these events using the `on()` method:
 - `MESSAGE_RESEND`: Offline messages resent
   - Callback receives: Array of message statuses
 
-### Constants
+## Constants
 
 ```javascript
 CONNECTED = "CONNECTED"
@@ -157,12 +133,3 @@ RECONNECT = "RECONNECT"
 MESSAGE_RESEND = "MESSAGE_RESEND"
 SERVER_DISCONNECT = "SERVER_DISCONNECT"
 ```
-
-### Topic Pattern Rules
-
-- Must match regex: `/^(?!.*\$)(?:[A-Za-z0-9_*~-]+(?:\.[A-Za-z0-9_*~-]+)*(?:\.>)?|>)$/u`
-- Cannot contain spaces
-- Cannot use reserved system topics
-- Supports wildcards:
-  - `*`: Single level wildcard
-  - `>`: Multi-level wildcard (must be
