@@ -156,7 +156,7 @@ Subscribe to these events using the `on()` method:
 - `CONNECTED`: Connection established
 - `DISCONNECTED`: Connection lost
 - `RECONNECT`: Reconnection status changes
-  - Callback receives: `"RECONNECTING"` or `"RECONNECTED"`
+  - Callback receives: `"RECONNECTING"`, `"RECONN_FAIL"` or `"RECONNECTED"`
 - `MESSAGE_RESEND`: Offline messages resent
   - Callback receives: Array of message statuses
 
