@@ -1,4 +1,4 @@
-# NodeJS SDK API Reference
+# WebJS SDK API Reference
 
 ### Constructor
 
