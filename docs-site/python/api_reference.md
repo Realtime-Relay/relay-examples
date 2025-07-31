@@ -117,7 +117,7 @@ Retrieves message history for a topic.
     "id": str,
     "topic": str,
     "message": Any,
-    "timestamp": datetime
+    "timestamp": str
 }
 ```
 
