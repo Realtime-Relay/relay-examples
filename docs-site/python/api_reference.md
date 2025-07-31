@@ -11,7 +11,7 @@ Parameters:
   - `api_key` (str): Your Relay API key
   - `secret` (str): Your Relay API secret
 
-### Methods
+### Core Methods
 
 #### `init(staging=False, opts=None)`
 
@@ -29,6 +29,8 @@ Establishes connection to the Relay Network.
 #### `async close()`
 
 Closes the connection to Relay.
+
+### Messaging Methods
 
 #### `async publish(topic, data)`
 
@@ -73,6 +75,8 @@ Parameters:
 
 Returns:
 - `list`: List of historical messages
+
+### Utility Methods
 
 #### `is_topic_valid(topic)`
 
