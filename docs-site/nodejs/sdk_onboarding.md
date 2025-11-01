@@ -3,6 +3,8 @@
 npm i relayx-js
 ```
 
+This is just an explanation. Skip to step 4 to get a full code example.
+
 ## SDK Initalization
 Initializing our SDKs with the API Key & Secret key so it can connect to the relayX Network.
 

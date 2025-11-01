@@ -27,6 +27,8 @@ val client = Realtime(this,
 client.init(staging = false, opts = mapOf("debug" to false))
 ```
 
+This is just an explanation. Skip to step 4 to get a full code example.
+
 ## Publish A Message
 We publish a message to `chat.room` when we connect to the relayX Network.
 
