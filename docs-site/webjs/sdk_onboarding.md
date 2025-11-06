@@ -9,7 +9,7 @@ This is just an explanation. Skip to step 4 to get a full code example.
 Initializing our SDKs with the API Key & Secret key so it can connect to the relayX Network.
 
 ```js
-import { Realtime } from "relayx-js"
+import { Realtime } from "relayx-webjs"
 
 const client = new Realtime({
   api_key: '$api_key',
