@@ -1,0 +1,7 @@
+[
+    [
+        "topic": "<String, topic which the message was sent to>",
+        "message": "<JsonObject | String | Number => Your Message>",
+        "resent": "<Boolean, if message was resent or not>"
+    ]
+]

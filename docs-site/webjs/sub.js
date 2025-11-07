@@ -5,5 +5,3 @@ await client.on("chat.room1", (data) => {
 client.on(CONNECTED, async () => {
   console.log("Connected to Relay!")
 })
-
-client.connect()

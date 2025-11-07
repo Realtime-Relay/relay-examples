@@ -1,0 +1,9 @@
+{
+    "data": [
+        {
+            "topic": "<String, topic which the message was sent to>",
+            "message": "<Map | Number | String => Your Message>",
+            "resent": "<Boolean, if message was resent or not>"
+        }
+    ]
+}
