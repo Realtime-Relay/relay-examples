@@ -1,0 +1,5 @@
+{
+    "id": "<UUID>",
+    "topic": "<Message Topic>",
+    "data": "<JsonObject | String | Number => Your Message>"
+}
