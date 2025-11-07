@@ -14,15 +14,3 @@ var history = await client.history("chat.room1", startDate, endDate)
 
 // This will return messages from $startDate to now()
 var history = await client.history("chat.room1", startDate)
-
-//--------------------------------------------------------
-// $history is a json array
-[
-    {
-        id: "<MESSAGE ID>",
-        topic: "<TOPIC MATCHING TOPIC / WILDCARD TOPIC>",
-        message: <Actual message as string, number or json>,
-        timestamp: "<Timestamp at which message was sent>"
-    }, 
-    ...
-]
