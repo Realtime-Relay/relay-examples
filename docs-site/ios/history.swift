@@ -19,15 +19,3 @@ let history = try await client.history(
     topic: "chat.room1",
     start: startDate
 )
-
-// --------------------------------------------------------
-// $history is a dict array
-[
-    [
-        "id": "<MESSAGE ID>",
-        "topic": "<TOPIC MATCHING TOPIC / WILDCARD TOPIC>",
-        "message": <Actual message as string, number or dict>,
-        "timestamp": "<Timestamp at which message was sent>"
-    ], 
-    ...
-]
