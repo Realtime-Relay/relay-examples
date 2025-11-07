@@ -1,0 +1,8 @@
+[
+    {
+        "id": "<MESSAGE UUID>",
+        "topic": "<TOPIC MATCHING TOPIC / WILDCARD TOPIC>",
+        "message": "<Actual message as string, number or Json>",
+        "timestamp": "<Timestamp UTC at which message was sent>"
+    }
+]
