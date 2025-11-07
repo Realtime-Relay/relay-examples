@@ -15,15 +15,3 @@ val history = client.history("chat.room1", start, end)
 
 // This will return messages from $start to now()
 val history = client.history("chat.room1", start, null)
-
-// --------------------------------------------------------
-// $history will look like (an array of JsonObject [com.google.gson.JsonObject])
-[
-    {
-        "id": "<MESSAGE ID>",
-        "topic": "<TOPIC MATCHING TOPIC / WILDCARD TOPIC>",
-        "message": <Actual message as string, number or dict>,
-        "timestamp": "<Timestamp at which message was sent>"
-    }, 
-    ...
-]
